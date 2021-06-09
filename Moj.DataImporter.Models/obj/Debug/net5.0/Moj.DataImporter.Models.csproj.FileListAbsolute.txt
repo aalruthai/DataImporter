@@ -1,0 +1,12 @@
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.GeneratedMSBuildEditorConfig.editorconfig
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.AssemblyInfoInputs.cache
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.AssemblyInfo.cs
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.csproj.CoreCompileInputs.cache
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\bin\Debug\net5.0\Moj.DataImporter.Models.deps.json
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\bin\Debug\net5.0\Moj.DataImporter.Models.dll
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\bin\Debug\net5.0\ref\Moj.DataImporter.Models.dll
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\bin\Debug\net5.0\Moj.DataImporter.Models.pdb
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.dll
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\ref\Moj.DataImporter.Models.dll
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.pdb
+G:\Projects\MOJ\Moj.DataImporter\Moj.DataImporter.Models\obj\Debug\net5.0\Moj.DataImporter.Models.csprojAssemblyReference.cache

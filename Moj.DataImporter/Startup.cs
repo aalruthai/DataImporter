@@ -10,10 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Moj.DataImporter.Business;
+using Moj.DataImporter.Contracts.Data;
 using Moj.DataImporter.Contracts.Excel;
 using Moj.DataImporter.Data;
 using Moj.DataImporter.Models;
-
+using AutoMapper;
 namespace Moj.DataImporter
 {
     public class Startup
@@ -29,6 +30,12 @@ namespace Moj.DataImporter
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IExcel, ExcelHandler>();
+            services.AddScoped<IItemHandler, ItemHandler>();
+            services.AddScoped<ICategoryHandler, CategoryHandler>();
+            services.AddScoped<IColorHandler, ColorHandler>();
+            services.AddScoped<IDeliveryPeriodHandler, DeliveryPeriodHandler>();
+            services.AddScoped<IOrderHandler, OrderHandler>();
+            services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

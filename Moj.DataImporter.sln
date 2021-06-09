@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moj.DataImporter", "Moj.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moj.DataImporter.Contracts", "Moj.DataImporter.Contracts\Moj.DataImporter.Contracts.csproj", "{39E2212C-26F3-41A2-B6F6-BBE34939BF42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moj.DataImporter.Models", "Moj.DataImporter.Models\Moj.DataImporter.Models.csproj", "{42CA4B0D-17B2-4FDC-9387-1B322550074D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{39E2212C-26F3-41A2-B6F6-BBE34939BF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39E2212C-26F3-41A2-B6F6-BBE34939BF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39E2212C-26F3-41A2-B6F6-BBE34939BF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CA4B0D-17B2-4FDC-9387-1B322550074D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42CA4B0D-17B2-4FDC-9387-1B322550074D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42CA4B0D-17B2-4FDC-9387-1B322550074D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42CA4B0D-17B2-4FDC-9387-1B322550074D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

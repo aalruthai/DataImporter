@@ -9,6 +9,7 @@ using Moj.DataImporter.Contracts.Excel;
 using Moj.DataImporter.Data;
 using Moj.DataImporter.Models;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace Moj.DataImporter.Controllers
 {
@@ -111,7 +112,7 @@ namespace Moj.DataImporter.Controllers
             return _context.Orders.Any(e => e.ID == id);
         }
 
-        [HttpPost("")]
+        [HttpPost("upload")]
         public async Task<IActionResult> uploadfile()
         {
             if (Request.Form.Files.Count < 1)
@@ -120,13 +121,21 @@ namespace Moj.DataImporter.Controllers
             }
             try
             {
-                handler.ProcessFile(Request.Form.Files[0].OpenReadStream());
+                var result = await handler.ProcessFile(Request.Form.Files[0].OpenReadStream());
+
+                return Ok(result);
+            }
+            catch (InvalidDataException ex)
+            {
+                logger.LogError(ex, "An error occurred while processing file");
+                return BadRequest("Not a valid Excel file");
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "An error occurred while processing file");
                 return BadRequest("Error Processing file");
             }
+            
             
 
             return Ok();
