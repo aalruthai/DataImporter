@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Moj.DataImporter.Models
 {
-    public class ColorCode
+    public class Category
     {
         public int ID { get; set; }
-        public string Code { get; set; }
+        public string CategoryName { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

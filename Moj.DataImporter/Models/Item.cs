@@ -11,5 +11,7 @@ namespace Moj.DataImporter.Models
         public string ItemCode { get; set; }
         public string ColorCode { get; set; }
         public string Description { get; set; }
+
+        public ICollection<Order> Orders { get; set; }
     }
 }

@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Moj.DataImporter.Business;
+using Moj.DataImporter.Contracts.Excel;
 using Moj.DataImporter.Data;
 using Moj.DataImporter.Models;
 
@@ -26,6 +28,7 @@ namespace Moj.DataImporter
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IExcel, ExcelHandler>();
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));

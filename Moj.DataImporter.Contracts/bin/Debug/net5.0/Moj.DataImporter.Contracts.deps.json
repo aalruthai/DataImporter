@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Moj.DataImporter.Contracts/1.0.0": {
+        "runtime": {
+          "Moj.DataImporter.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Moj.DataImporter.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

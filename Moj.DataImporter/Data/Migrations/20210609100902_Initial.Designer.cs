@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Moj.DataImporter.Data;
 
 namespace Moj.DataImporter.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210609100902_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -471,7 +473,7 @@ namespace Moj.DataImporter.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CategoryID")
+                    b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
                     b.Property<int>("ColorID")
@@ -563,7 +565,9 @@ namespace Moj.DataImporter.Data.Migrations
                 {
                     b.HasOne("Moj.DataImporter.Models.Category", "Category")
                         .WithMany("Orders")
-                        .HasForeignKey("CategoryID");
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Moj.DataImporter.Models.Color", "Color")
                         .WithMany("Orders")
@@ -572,13 +576,13 @@ namespace Moj.DataImporter.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Moj.DataImporter.Models.DeliveryPeriod", "DeliveryPeriod")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("DeliveryPeriodID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Moj.DataImporter.Models.Item", "Item")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("ItemID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -598,16 +602,6 @@ namespace Moj.DataImporter.Data.Migrations
                 });
 
             modelBuilder.Entity("Moj.DataImporter.Models.Color", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Moj.DataImporter.Models.DeliveryPeriod", b =>
-                {
-                    b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("Moj.DataImporter.Models.Item", b =>
                 {
                     b.Navigation("Orders");
                 });

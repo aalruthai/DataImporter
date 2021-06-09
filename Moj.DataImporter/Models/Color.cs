@@ -9,5 +9,6 @@ namespace Moj.DataImporter.Models
     {
         public int ID { get; set; }
         public string ColorName { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }

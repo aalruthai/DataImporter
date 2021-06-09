@@ -13,8 +13,11 @@ namespace Moj.DataImporter.Data
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
         public DbSet<Color> Colors { get; set; }
-        //public DbSet<ColorCode> ColorCodes { get; set; }
+        
         public DbSet<DeliveryPeriod> DeliveryPeriods { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
@@ -23,8 +26,35 @@ namespace Moj.DataImporter.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            
-            
+            builder.Entity<Item>(entity => {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ItemCode).HasMaxLength(64);
+                entity.Property(e => e.ColorCode).HasMaxLength(128);
+                entity.Property(e => e.Description).HasMaxLength(512);
+                entity.HasMany(e => e.Orders).WithOne(e => e.Item);
+            });
+
+            builder.Entity<Order>(entity => {
+                entity.HasKey(e => e.ID);
+
+            });
+
+            builder.Entity<Color>(entity => {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.ColorName).HasMaxLength(64);
+                entity.HasMany(e => e.Orders).WithOne(e => e.Color);
+            });
+            builder.Entity<Category>(entity => {
+                entity.HasKey(e => e.ID);
+                entity.Property(e => e.CategoryName).HasMaxLength(64);
+                entity.HasMany(e => e.Orders).WithOne(e => e.Category);
+            });
+
+            builder.Entity<DeliveryPeriod>(entity => {
+                entity.HasKey(e => e.ID);
+                entity.HasMany(e => e.Orders).WithOne(e => e.DeliveryPeriod);
+            });
+
             SeedData(builder);
 
             base.OnModelCreating(builder);
@@ -47,20 +77,12 @@ namespace Moj.DataImporter.Data
                 new DeliveryPeriod { Period = "1-3 WorkDay", ID = 1 },
                 new DeliveryPeriod { Period = "1-8 WorkDay", ID = 2 });
 
-            //builder.Entity<ColorCode>().HasData(
-            //    new ColorCode { Code = "pants", ID = 1 },
-            //    new ColorCode { Code = "Kniepants Jorge", ID = 2 },
-            //    new ColorCode { Code = "Jeans", ID = 3 },
-            //    new ColorCode { Code = "Jeans Willy", ID = 4 },
-            //    new ColorCode { Code = "Kniepants Maria", ID = 5 },
-            //    new ColorCode { Code = "Top Wilma", ID = 6 },
-            //    new ColorCode { Code = "Top Annie", ID = 7 },
-            //    new ColorCode { Code = "Top Bill", ID = 8 },
-            //    new ColorCode { Code = "Steve Irwin", ID = 9 },
-            //    new ColorCode { Code = "Jeans Willy Boys", ID = 10 },
-            //    new ColorCode { Code = "Short Billy & Bobble", ID = 11 },
-            //    new ColorCode { Code = "jacket", ID = 12 },
-            //    new ColorCode { Code = "test", ID = 13 });
+            builder.Entity<Category>().HasData(
+                new Category { CategoryName = "baby", ID = 1},
+                new Category { CategoryName = "boy", ID = 2 },
+                new Category { CategoryName = "girl", ID = 3 }
+                );
+            
         }
     }
 }

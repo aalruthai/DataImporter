@@ -1,0 +1,12 @@
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\bin\Debug\net5.0\Moj.DataImporter.Contracts.deps.json
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\bin\Debug\net5.0\Moj.DataImporter.Contracts.dll
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\bin\Debug\net5.0\ref\Moj.DataImporter.Contracts.dll
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\bin\Debug\net5.0\Moj.DataImporter.Contracts.pdb
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.csprojAssemblyReference.cache
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.AssemblyInfoInputs.cache
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.AssemblyInfo.cs
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.csproj.CoreCompileInputs.cache
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.dll
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\ref\Moj.DataImporter.Contracts.dll
+D:\Learning\ASP.NET\DataImporter\Moj.DataImporter.Contracts\obj\Debug\net5.0\Moj.DataImporter.Contracts.pdb
