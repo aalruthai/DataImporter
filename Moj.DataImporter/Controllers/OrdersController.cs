@@ -135,7 +135,7 @@ namespace Moj.DataImporter.Controllers
             catch (Exception ex)
             {
                 logger.LogError(ex, "An error occurred while processing file");
-                return BadRequest("Error Processing file");
+                return BadRequest("Error Processing file, " + ex.Message);
             }
             
             
