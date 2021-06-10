@@ -76,9 +76,13 @@ namespace Moj.DataImporter.Business
                 throw new Exception("Invalid excel file");
             }
             var sheet = package.Workbook.Worksheets[0];
-            if (sheet.Dimension.Columns != 10 || sheet.Dimension.Rows < 2)
+            if (sheet.Dimension == null)
             {
                 throw new Exception("Empty File");
+            }
+            if (sheet.Dimension.Columns != 10 || sheet.Dimension.Rows < 2)
+            {
+                throw new Exception("Incorrect File Contents");
             }
 
             return sheet;

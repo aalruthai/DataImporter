@@ -113,6 +113,8 @@ namespace Moj.DataImporter.Controllers
         }
 
         [HttpPost("upload")]
+        [RequestFormLimits(MultipartBodyLengthLimit = 209715200)]
+        [RequestSizeLimit(209715200)]
         public async Task<IActionResult> uploadfile()
         {
             if (Request.Form.Files.Count < 1)
